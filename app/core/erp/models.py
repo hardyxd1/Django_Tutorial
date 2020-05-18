@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 # Create your models here.
 
-class Empleado(models.Model):
+class Employee(models.Model):
     names= models.CharField(max_length=150, verbose_name='Nombres')
     ine=models.CharField(max_length=10, unique=True, verbose_name='INE')
     date_joined=models.DateTimeField(default=datetime.now, verbose_name='Fecha de registro')
@@ -21,5 +21,5 @@ class Empleado(models.Model):
     class Meta:
         verbose_name= 'Empleado'
         verbose_name_plural= 'Empleados'        
-        dt_table= 'empleado'
-        ordering=[id]
+        db_table='empleado'
+        ordering=['id']
